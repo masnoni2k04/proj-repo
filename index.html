@@ -1,0 +1,48 @@
+<canvas id="bckg" width="500" height="500" style="border:1px solid #4cff00"></canvas>
+
+<script>
+    var bckg = document.getElementById("bckg").getContext("2d");
+    bckg.font = '30px Arial';
+
+    var x1 = 25;
+    var y = 25;
+    var x2 = x1 + 50;
+    var x3 = x2 + 50;
+    var x4 = x3 + 50;
+
+    var lvl = 1;
+    var hp = lvl * 10;
+
+        function staty() {
+        x += warX;
+    }
+
+
+    bckg.fillText("lvl", x1, y);
+    bckg.fillText(lvl, x2, y);
+    bckg.fillText("hp", x3, y);
+    bckg.fillText(hp, x4, y);
+
+
+
+</script>
+
+<script src="
+https://cdn.socket.io/socket.io-1.4.5.js">
+</script>
+<script>
+    var socket = io();
+
+    var test1 = function () {
+        socket.emit('test1', {
+            reason: 'test1'
+        });
+    }
+
+    socket.on('serverMsg', function (data) {
+        console.log(data.msg);
+    });
+
+</script>
+
+<button onclick="test1()">test1</button>
